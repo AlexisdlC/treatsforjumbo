@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import Login from './pages/Login'
+import Layout from './pages/Layout'
+import Dashboard from './pages/Dashboard';
+import Home from './pages/Home'
+import EditNote from './pages/EditNote'
+import TreatGame from './pages/TreatGame';
+
+import RequireAuth from './RequireAuth';
+import PersistLogin from './pages/PersistLogin';
+// import logo from './logo.svg';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Routes>
+      <Route path="/" element={<Layout />}>
 
-export default App;
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/treatgame' element={<TreatGame />} />
+        
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth />}>
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='editNote' element={<EditNote />} />
+          </Route>
+        </Route>
+        
+      </Route>
+    </Routes>
+  )
+}
