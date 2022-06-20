@@ -67,7 +67,8 @@ body{
     height: calc(var(--cat-height)*0.55);
     width: calc(var(--cat-height)*0.55);
     position: relative;
-    margin: auto;
+    margin-inline: auto;
+    margin-top: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -527,6 +528,145 @@ body{
     margin: 0;
     margin-left: 5px;
     color: #151E3F
+}
+
+/* #endregion */
+
+/* #region TreatGame Page */
+
+.main-game{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-block: 75px;
+}
+
+.gameArea-game{
+    width: 45%;
+    margin-inline: 30px;
+    /* margin-top: 75px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.gameArea-game--message{
+    color: black;
+    font-family: "Nothing You Could Do";
+    font-size: 1.5rem;
+    background-color: #d9c5b2;
+    padding: 30px;
+    border-radius: 20px;
+    border: 10px solid #f3f3f4;
+    white-space: pre-line;
+    margin: 50px auto;
+}
+
+.gameArea-game--button{
+    width: 65%;
+    height: 55px;
+    background-color: #034732;
+    color: #f3f3f4;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    margin-inline: auto;
+}
+
+.gameArea-game--buttonSection{
+    display: flex;
+    justify-content: space-around;
+}
+
+.gameArea-game--addButton{
+    padding-block: 20px;
+    padding-inline: 20px;
+    background-color: #034732;
+    color: #f3f3f4;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+}
+
+.gameArea-game--removeButton{
+    padding-block: 20px;
+    padding-inline: 20px;
+    background-color: #6e0f0f;
+    color: #f3f3f4;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+}
+
+.gameArea-game--stopButton{
+    padding-block: 20px;
+    padding-inline: 20px;
+    background-color: #a76e04;
+    color: #f3f3f4;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+}
+
+.gameArea-game--bowl{
+    position: relative;
+    margin: 150px auto;
+    width: 170px;
+    height: 70px;
+    background-color: #D29003;
+    border-radius: 4px 4px 150px 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+.gameArea-game--bowl:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 190px;
+    height: 10px;
+    background-color: #A16E02;
+    border-radius: 6px;
+    top: 0px;
+    left: -10px;
+}
+
+.gameArea-game--bowl p{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #151E3F;
+}
+
+.gameArea-game--barf{
+    width: 180px;
+    height: 60px;
+    border-radius: 35px;
+    background-color: #A16E02;
+    margin-block: 25px;
+    align-items: center;
+    margin: 75px auto;
+    position: relative;
+    z-index: -10;
+}
+
+.gameArea-game--barf::after, .gameArea-game--barf::before{
+    content: '';
+    background-color: #A16E02;
+    border-radius: 30px;
+    width: 180px;
+    height: 60px;
+    transform: rotate(60deg);
+    z-index: -1;
+    position: absolute;
+}
+
+.gameArea-game--barf::after{
+    transform: rotate(-60deg);
+    z-index: -10;
 }
 
 /* #endregion */
