@@ -2,15 +2,15 @@ import { useState } from "react"
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 import { useNavigate } from "react-router-dom";
 
-const EditNoteForm = (props) => {
+const CreateNote = () => {
 
     const axiosPrivate = useAxiosPrivate()
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
-        "title": props.note.title,
-        "body": props.note.body,
-        "shared": props.note?.sentTo ? true: false
+        "title": '',
+        "body": '',
+        "shared": false
     })
 
     function handleChange(event){
@@ -34,9 +34,10 @@ const EditNoteForm = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        console.log(formData)
 
         try {
-            const response = await axiosPrivate.patch(`/notes/${props.note._id}`,
+            const response = await axiosPrivate.post(`/notes`,
                 JSON.stringify(formData),
                 {
                     headers: {'Content-Type': 'application/json'},
@@ -51,31 +52,33 @@ const EditNoteForm = (props) => {
     }
 
     return (
-        <main className="main-edit">
-            <section className="section-edit">
-                <form className="form-edit" onSubmit={handleSubmit}>
-                    <h1 className="form-edit--title">Edit Note</h1>
-                    <label className="form-edit--label" htmlFor="title">Title:</label>
+        <main className='main-create'>
+            <section className="section-create">
+                <form className="form-create" onSubmit={handleSubmit}>
+                    <h1 className="form-create--title">Create New Note</h1>
+                    <label className="form-create--label" htmlFor="title">Title:</label>
                     <input 
-                        className="form-edit--input"
+                        className="form-create--input"
                         autoComplete="off"
                         type="text"
                         id="title"
                         name="title"
+                        placeholder="Type Note Title Here"
                         value={formData.title}
                         onChange={handleChange} 
                     />
                     
-                    <label className="form-edit--label" htmlFor="body">Body:</label>
+                    <label className="form-create--label" htmlFor="body">Body:</label>
                     <textarea
                         id="body"
                         name="body"
                         autoComplete="off"
+                        placeholder="Type Note Content Here"
                         value={formData.body}
                         onChange={handleChange}
-                        className="form-edit--textarea"
+                        className="form-create--textarea"
                     ></textarea>
-                    <div className="form-edit--shared">
+                    <div className="form-create--shared">
                         <input 
                             type="checkbox"
                             id="shared"
@@ -85,12 +88,12 @@ const EditNoteForm = (props) => {
                         <label htmlFor="shared">Share Note</label>
                     </div>
 
-                <button className='form-edit--button'>Save Changes</button>
+                <button className='form-create--button'>Save Note</button>
                     
                 </form>
             </section>
         </main>
-    )
+    );
 }
 
-export default EditNoteForm
+export default CreateNote;

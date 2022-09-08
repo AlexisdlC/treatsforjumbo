@@ -15,7 +15,7 @@ export default function Login() {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || "/login"
+    const from = location.state?.from?.pathname || "/dashboard"
 
     const [loginData,setLoginData] = React.useState({
         "username": "",

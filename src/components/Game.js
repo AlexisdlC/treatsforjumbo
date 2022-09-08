@@ -6,6 +6,22 @@ import Barf from './Barf';
 const Game = (props) => {
     console.log(props.goal)
 
+    const messagesTreatGiven = [
+        `Yay! Thanks for the Treat! \n \n Would you like to give more? That's more Treats for me, and more fun for you!`,
+        `One Treat, yes, I love that! \n \n If you have more, I'm all for it! The more Treats, the happier I get!`,
+        `TREEEEEEEEEAAAAAAAAAATS! \n \n I'll get into it and do the Bunny, I'm sure you'll want to give me more!`,
+        `I love this game, thanks! \n \n I'm the #1 fan of Treats, so if you want to give me more, don't hesitate!`,
+        `You're so good at the game! \n \n Ain't it fun? Let's keep playing and get some more Treats for Jumbo, aka me!`
+    ]
+
+    const messagesBarf = [
+        `Oupsie, just barfed a little... \n \n Sorry about that, but we can recycle that barf to make more treats for Treat O'Clock!`,
+        `Oh well, that was a bit too much for me... \n \n Good news though, we can play again whenever you want!`,
+        `Oh no... I guess I bit off a bit more than I could chew... \n \n I think we should play again so I can do better... Treats?`,
+        `You're too generous! A bit too much for me even! \n \n Alright, next round, same team: you give the Treats, I eat the Treats!`,
+        `I love this game, and barfing is part of the game! \n \n I think you need more training, so I'll do the effort and let you give me some more Treats again!`
+    ]
+
     const [inPlay, setInPlay] = useState(true)
     const [barfed, setBarfed] = useState(false)
 
@@ -18,12 +34,14 @@ const Game = (props) => {
         setTreats((prev) => {
             const offset = Math.floor(Math.random()*4)
             if (props.goal - prev + 1 > offset){
+                const randomIndex = Math.floor(Math.random()*messagesTreatGiven.length)
                 setMessage(
-                    `Yay! Thanks for the Treat! \n \n Would you like to give more? That's more Treats for me, and more fun for you!`
+                    messagesTreatGiven[randomIndex]
                 )
             } else if (prev + 1 > props.goal ){
+                const randomIndex = Math.floor(Math.random()*messagesBarf.length)
                 setMessage(
-                    `Oupsie, just barfed a little... \n \n Sorry about that, but we can recycle that barf to make more treats for Treat O'Clock!`
+                    messagesBarf[randomIndex]
                 )
                 setInPlay(false)
                 setBarfed(true)

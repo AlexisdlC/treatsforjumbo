@@ -300,7 +300,7 @@ body{
 
 .info-home{
     width: 45%;
-    margin-block: 100px;
+    margin-block: 15px;
     margin-inline: 10px;
     background-color: #d9c5b2;
     border: 25px solid #f3f3f4;
@@ -434,7 +434,95 @@ body{
 
 /* #region Dashboard Style */
 
-.main--dashboard{
+.main-dashboard{
+    color: #f3f3f4;
+    display: flex;
+    justify-content: space-around;
+    margin: 25px
+}
+
+.notes-dashboard{
+    width: 95%;
+    border-radius: 15px;
+}
+
+.allNotes-dashboard{
+    width: 50%;
+    margin-top: 15px;
+}
+
+.notes-dashboard--note{
+    border-radius: 15px;
+    border: 5px solid #d9c5b2;
+    margin-block: 20px;
+    padding: 15px;
+}
+
+.notes-dashboard--title{
+    font-size: 1.5rem;
+}
+
+.notes-dashboard--noteMeta{
+    display: flex;
+    font-size: 1rem;
+    padding-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notes-dashboard--body{
+    width: 75%;
+}
+
+.notes-dashboard--editButton{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #151E3F;
+    border: 1px solid #f3f3f4;
+    margin-bottom: 5px;
+}
+
+.notes-dashboard--editButtonIcon{
+    width: 20px;
+    height: 20px;
+    color: #f3f3f4;
+}
+
+.notes-dashboard--deleteButton{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #151E3F;
+    border: 1px solid #f3f3f4;
+}
+
+.notes-dashboard--deleteButtonIcon{
+    width: 20px;
+    height: 20px;
+    color: #f3f3f4;
+}
+
+.notes-dashboard--createButton{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #034732;
+    border: 2px solid #f3f3f4;
+}
+
+.notes-dashboard--createButtonIcon{
+    width: 40px;
+    height: 40px;
     color: #f3f3f4;
 }
 
@@ -443,6 +531,11 @@ body{
 /* #region EditNote Page */
 
 .main-edit{
+    display: flex;
+    justify-content: center;
+}
+
+.section-edit{
     background-color: #f3f3f4;
     width: 500px;
     min-height: 700px;
@@ -450,6 +543,7 @@ body{
     display: flex;
     justify-content: center;
     padding: 25px;
+    margin-block: 40px;
 }
 
 .form-edit{
@@ -532,6 +626,173 @@ body{
 
 /* #endregion */
 
+/* #region CreateNote Page */
+
+.main-create{
+    display: flex;
+    justify-content: center;
+}
+
+.section-create{
+    background-color: #f3f3f4;
+    width: 500px;
+    min-height: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-block: 40px;
+}
+
+.form-create{
+    background-color: #d9c5b2;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-create--title{
+    color: #151E3F;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-block: 10px;
+}
+
+.form-create--label{
+    font-size: 1.5rem;
+    color: #151E3F;
+    font-weight: 700;
+    margin-block: 10px;
+}
+
+.form-create--input{
+    min-height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f4;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-indent: 15px;
+}
+
+.form-create--input:focus{
+    outline: none;
+}
+
+.form-create--textarea{
+    min-height: 250px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f4;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-family: "Nunito";
+}
+
+.form-create--button{
+    width: 75%;
+    height: 55px;
+    background-color: #034732;
+    color: #f3f3f4;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    margin-block: 45px;
+}
+
+.form-create--button:active{
+    transform: scale(0.98);
+}
+
+.form-create--shared{
+    font-size: 1.1rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.form-create--shared label {
+    margin: 0;
+    margin-left: 5px;
+    color: #151E3F
+}
+
+/* #endregion */
+
+/* #region DeleteNote Page */
+
+.main-delete{
+    display: flex;
+    justify-content: center;
+}
+
+.section-delete{
+    background-color: #f3f3f4;
+    width: 500px;
+    min-height: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-block: 40px;
+}
+
+.prompt-delete{
+    background-color: #d9c5b2;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.subtitle-delete{
+    font-size: 1.25rem;
+    margin-block: 0px;
+}
+
+.content-delete{
+    font-size: 1rem;
+    background-color: #f3f3f4;
+    padding-inline: 10px;
+    padding-block: 20px;
+    border-radius: 10px;
+}
+
+.buttonSection-delete{
+    display: flex;
+    justify-content: space-around;
+}
+
+.deleteButton-delete{
+    background-color: #6e0f0f;
+    color: #f3f3f4;
+    padding-block: 10px;
+    padding-inline: 30px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 15px;
+}
+
+.goBackButton-delete{
+    background-color: #034732;
+    color: #f3f3f4;
+    padding-block: 10px;
+    padding-inline: 30px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 15px;
+}
+
+/* #endregion */
+
 /* #region TreatGame Page */
 
 .main-game{
@@ -559,6 +820,7 @@ body{
     border: 10px solid #f3f3f4;
     white-space: pre-line;
     margin: 50px auto;
+    width: 85%;
 }
 
 .gameArea-game--button{

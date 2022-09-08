@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Home from './pages/Home'
 import EditNote from './pages/EditNote'
 import TreatGame from './pages/TreatGame';
+import CreateNote from './pages/CreateNote';
+import DeleteNote from './pages/DeleteNote';
 
 import RequireAuth from './RequireAuth';
 import PersistLogin from './pages/PersistLogin';
@@ -25,6 +27,8 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route path='dashboard' element={<Dashboard />} />
             <Route path='editNote' element={<EditNote />} />
+            <Route path='createNote' element={<CreateNote />} />
+            <Route path='deleteNote' element={<DeleteNote />} />
           </Route>
         </Route>
         
